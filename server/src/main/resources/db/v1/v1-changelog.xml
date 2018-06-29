@@ -41,7 +41,7 @@
                 <constraints nullable="false"
                              unique="true"
                              primaryKey="true"
-                             primaryKeyName="employee_id" />
+                             primaryKeyName="manager_id" />
             </column>
             <column name="FIRST_NAME" type="VARCHAR(20)">
                 <constraints nullable="false"/>
