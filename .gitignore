@@ -3,3 +3,7 @@
 *.iws
 *.iml
 *.ipr
+
+### server ###
+/server/target/
+!.mvn/wrapper/maven-wrapper.jar
