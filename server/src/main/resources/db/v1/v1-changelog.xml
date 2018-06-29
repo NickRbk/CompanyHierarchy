@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <preConditions onFail="HALT">
+        <dbms type="postgresql" />
+    </preConditions>
+
+    <changeSet id="1" author="Nick Rybak">
+        <createTable tableName="EMPLOYEES">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false"
+                             unique="true"
+                             primaryKey="true"
+                             primaryKeyName="employee_id" />
+            </column>
+            <column name="FIRST_NAME" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FAMILY_NAME" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PHONE_NUMBER" type="VARCHAR(20)">
+                <constraints nullable="false" />
+            </column>
+            <column name="POSITION" type="VARCHAR(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="SUPERVISOR_ID" type="BIGINT">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="Nick Rybak">
+        <createTable tableName="TOP_MANAGERS">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false"
+                             unique="true"
+                             primaryKey="true"
+                             primaryKeyName="employee_id" />
+            </column>
+            <column name="FIRST_NAME" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FAMILY_NAME" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PHONE_NUMBER" type="VARCHAR(20)">
+                <constraints nullable="false" />
+            </column>
+            <column name="POSITION" type="VARCHAR(50)" defaultValue="CEO of company">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
