@@ -10,6 +10,8 @@ about human resources.
 There are two main role for EMPLOYEES: _**subordinate**_ and _**supervisor**_.
 Apart employees in another table there are a TOP MANAGEMENT of company (like CEO etc.).
 
+So, there are 2 tables: _**employees**_ and _**top_managers**_.
+
 Initially DB has pre populated data.
 
 There are 2 main controllers:
