@@ -16,13 +16,13 @@ There are 2 main controllers:
 - `/employees`
 - `/supervisors`
 
-#### Employees controller (`/employees`)
+### Employees controller (`/employees`)
 
 - `/` (GET) - get all company's employees
 ```json
 [
     {
-        "id": ****,
+        "id": 1,
         "firstName": "******",
         "familyName": "******",
         "phoneNumber": "******",
@@ -35,13 +35,13 @@ There are 2 main controllers:
 
 ```json
 {
-    "id": ****,
+    "id": 1,
     "firstName": "******",
     "familyName": "******",
     "phoneNumber": "******",
     "position": "******",
     "supervisor": {
-        "id": ****,
+        "id": 1,
         "firstName": "******",
         "familyName": "******",
         "phoneNumber": "******",
@@ -55,7 +55,7 @@ Top Management by role for particular employee (e.g in DB prepopulated role "_**
 
 ```json
 {
-    "id": ****,
+    "id": 1,
     "firstName": "******",
     "familyName": "******",
     "phoneNumber": "******",
@@ -95,25 +95,25 @@ employee by id
 
 - `/{employeeId}/supervisor` (DELETE) - remove supervisor for particular employee
 
-:exclamation: To set supervisor should be followed the next rules:
+:exclamation: _**To set supervisor should be followed the next rules**_:
 1. You can't supervise yourself
 2. If employee already has supervisor first you need to solve this conflict (detach them)
 3. Employees shouldn't control each other. It's control lock issue and it prohibited
 
 The above rules checked in programm by using _**chain of responsibility**_ pattern. 
 
-:exclamation: To delete employee should be followed the next rule:
+:exclamation: _**To delete employee should be followed the next rule**_:
 - if employee supervised another employees he can't be deleted, before solving this
 issue.
 
-#### Supervisors controller (`/supervisors`)
+### Supervisors controller (`/supervisors`)
 
 - `/` (GET) - get all company's supervisors
 
 ```json
 [
     {
-        "id": ****,
+        "id": 1,
         "firstName": "******",
         "familyName": "******",
         "phoneNumber": "******",
@@ -127,7 +127,7 @@ issue.
 ```json
 [
     {
-        "id": ****,
+        "id": 1,
         "firstName": "******",
         "familyName": "******",
         "phoneNumber": "******",
