@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <preConditions onFail="HALT">
+        <dbms type="postgresql"/>
+    </preConditions>
+
+    <changeSet id="1" author="Nick Rybak">
+        <insert tableName="TOP_MANAGERS">
+            <column name="FIRST_NAME" value="Chuck"/>
+            <column name="FAMILY_NAME" value="Richards"/>
+            <column name="PHONE_NUMBER" value="+380542569823"/>
+            <column name="ROLE" value="ceo"/>
+            <column name="ROLE_DESCRIPTION" value="CEO at CoreValue"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="2" author="Nick Rybak">
+        <insert tableName="EMPLOYEES">
+            <column name="FIRST_NAME" value="Mark"/>
+            <column name="FAMILY_NAME" value="Wells"/>
+            <column name="PHONE_NUMBER" value="+380542569823"/>
+            <column name="POSITION" value="QA specialist"/>
+        </insert>
+        <insert tableName="EMPLOYEES">
+            <column name="FIRST_NAME" value="Andrew"/>
+            <column name="FAMILY_NAME" value="Brave"/>
+            <column name="PHONE_NUMBER" value="+380783456298"/>
+            <column name="POSITION" value="Java developer"/>
+        </insert>
+        <insert tableName="EMPLOYEES">
+            <column name="FIRST_NAME" value="Nick"/>
+            <column name="FAMILY_NAME" value="Well"/>
+            <column name="PHONE_NUMBER" value="+380740547809"/>
+            <column name="POSITION" value="Project Manager"/>
+        </insert>
+        <insert tableName="EMPLOYEES">
+            <column name="FIRST_NAME" value="Anna"/>
+            <column name="FAMILY_NAME" value="Ti"/>
+            <column name="PHONE_NUMBER" value="+380541649826"/>
+            <column name="POSITION" value="HR specialist"/>
+        </insert>
+        <insert tableName="EMPLOYEES">
+            <column name="FIRST_NAME" value="Marry"/>
+            <column name="FAMILY_NAME" value="Li"/>
+            <column name="PHONE_NUMBER" value="+380917635492"/>
+            <column name="POSITION" value="trainee"/>
+        </insert>
+        <insert tableName="EMPLOYEES">
+            <column name="FIRST_NAME" value="Alex"/>
+            <column name="FAMILY_NAME" value="Bart"/>
+            <column name="PHONE_NUMBER" value="+380181739538"/>
+            <column name="POSITION" value="trainee"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

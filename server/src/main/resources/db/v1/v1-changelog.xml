@@ -6,7 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
 
     <preConditions onFail="HALT">
-        <dbms type="postgresql" />
+        <dbms type="postgresql"/>
     </preConditions>
 
     <changeSet id="1" author="Nick Rybak">
@@ -15,7 +15,7 @@
                 <constraints nullable="false"
                              unique="true"
                              primaryKey="true"
-                             primaryKeyName="employee_id" />
+                             primaryKeyName="employee_id"/>
             </column>
             <column name="FIRST_NAME" type="VARCHAR(20)">
                 <constraints nullable="false"/>
@@ -24,13 +24,15 @@
                 <constraints nullable="false"/>
             </column>
             <column name="PHONE_NUMBER" type="VARCHAR(20)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
             <column name="POSITION" type="VARCHAR(50)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
             <column name="SUPERVISOR_ID" type="BIGINT">
-                <constraints nullable="true" />
+                <constraints nullable="true"
+                             foreignKeyName="fk_supervisor_id"
+                             references="employees(id)"/>
             </column>
         </createTable>
     </changeSet>
@@ -41,7 +43,7 @@
                 <constraints nullable="false"
                              unique="true"
                              primaryKey="true"
-                             primaryKeyName="manager_id" />
+                             primaryKeyName="manager_id"/>
             </column>
             <column name="FIRST_NAME" type="VARCHAR(20)">
                 <constraints nullable="false"/>
@@ -50,10 +52,13 @@
                 <constraints nullable="false"/>
             </column>
             <column name="PHONE_NUMBER" type="VARCHAR(20)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
-            <column name="POSITION" type="VARCHAR(50)" defaultValue="CEO of company">
-                <constraints nullable="false" />
+            <column name="ROLE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_DESCRIPTION" type="VARCHAR(50)">
+                <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
